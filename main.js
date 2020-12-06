@@ -4,8 +4,7 @@ const formElement = document.querySelector('form');
 
 
 getReport.addEventListener('click', () => {
-  
-  
+
   let searchReport = searchReportInput.value;
   localStorage.setItem('value-name', searchReport);
 
