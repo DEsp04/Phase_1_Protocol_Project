@@ -3,8 +3,8 @@ const searchReportInput = document.getElementById("reportText");
 const formElement = document.querySelector('form');
 
 
-getReport.addEventListener('click', (e) => {
-  e.preventDefault();
+getReport.addEventListener('click', () => {
+  
   
   let searchReport = searchReportInput.value;
   localStorage.setItem('value-name', searchReport);
