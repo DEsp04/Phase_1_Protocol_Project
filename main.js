@@ -1,6 +1,6 @@
 let getReport = document.getElementById("getReports");
 const searchReportInput = document.getElementById("reportText");
-const formElement = document.querySelector('form');
+
 
 
 getReport.addEventListener('click', () => {
@@ -8,11 +8,14 @@ getReport.addEventListener('click', () => {
   let searchReport = searchReportInput.value;
   localStorage.setItem('value-name', searchReport);
 
-  if (searchReport.length >= 1) {
-    window.open("./report/reports.html");
-  } else { 
+  if (searchReport.length > 1 ) {
+    document.getElementById("linkToReport").setAttribute('href', "./report/reports.html");
+    document.getElementById("linkToReport").setAttribute('target', "_blank")
+    // window.open("./report/reports.html");
+  } else if (searchReport === "") {
+    document.getElementById("linkToReport").removeAttribute("href", "target");
     alert("Enter key term");
   }
-  
-  formElement.reset();
+
+  searchReportInput.value = "";
 })
